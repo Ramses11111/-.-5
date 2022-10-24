@@ -32,7 +32,7 @@ def ask():
         if 0 > x or x > 2 or 0 > y or y > 2:
             print("Координаты вне диапазона, введите другие! ")
             continue
-        if field[x][y] != " ":
+        elif field[x][y] != "-":
             print("Клетка занята! ")
             continue
         return x, y
@@ -52,24 +52,26 @@ def chek_win():
             print("Выиграл O!!")
             return True
     return False
+def start():
+    num = 0
+    while True:
+        num +=1
+        show()
+        if num % 2 == 1:
+            print("Ходит крестик ")
+        else:
+            print("Ходит нолик ")
+        x, y = ask()
+        if num % 2 == 1:
+            field[x][y] = "X"
+        else:
+            field[x][y] = "O"
+        if chek_win():
+            break
+        if num == 9:
+            print("Ничья!")
+            break
 
+field = [["-"] * 3 for i in range(3)]
 greed()
-field = [[" "] * 3 for i in range(3)]
-num = 0
-while True:
-    num +=1
-    show()
-    if num % 2 == 1:
-        print("Ходит крестик ")
-    else:
-        print("Ходит нолик ")
-    x, y = ask()
-    if num % 2 == 1:
-        field[x][y] = "X"
-    else:
-        field[x][y] = "O"
-    if chek_win():
-        break
-    if num == 9:
-        print("Ничья!")
-        break
+start()
