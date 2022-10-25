@@ -71,6 +71,7 @@ def start():
         if chek_win():
             break
         if num == 9:
+            show()
             print("Ничья!")
             break
 
