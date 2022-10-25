@@ -46,9 +46,11 @@ def chek_win():
         for c in cord:
             symbols.append(field[c[0]][c[1]])
         if symbols == ["X", "X", "X"]:
+            show()
             print("Выиграл Х!!")
             return True
         if symbols == ["O", "O", "O"]:
+            show()
             print("Выиграл O!!")
             return True
     return False
