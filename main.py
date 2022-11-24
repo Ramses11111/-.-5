@@ -78,3 +78,4 @@ def start():
 field = [["-"] * 3 for i in range(3)]
 greed()
 start()
+input()
